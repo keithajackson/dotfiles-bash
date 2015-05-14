@@ -16,11 +16,3 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
-
-# Colorize tree output
-if type tree &> /dev/null; then
-	alias tree='tree -C'
-fi
-
-# Displays information related to the system's ability to sleep
-alias whyunosleep='pmset -g assertions | grep --color=never Sleep'

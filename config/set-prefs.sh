@@ -72,9 +72,6 @@ defaults write com.apple.finder FXDefaultSearchScope -string 'SCcf'
 echo "- Disable warning upon changing file extensions"
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 
-echo "- Enable spring-loaded directories"
-defaults write NSGlobalDomain com.apple.springing.enabled -bool true
-
 echo "- Enable/disable drive icons on desktop"
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
 defaults write com.apple.finder ShowHardDrivesOnDesktop -bool false
@@ -97,9 +94,6 @@ defaults write com.apple.dock mru-spaces -bool false
 
 echo "- Automatically hide and show the Dock"
 defaults write com.apple.dock autohide -bool true
-
-echo "- Remove all applications from Dock"
-defaults write com.apple.dock persistent-apps -array
 
 echo "- Set bottom right hot corner to show/hide desktop"
 defaults write com.apple.dock wvous-br-corner -int 4
