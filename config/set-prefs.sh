@@ -19,7 +19,7 @@ echo "- Disable screenshot shadows"
 defaults write com.apple.screencapture disable-shadow -bool true
 
 echo "- Only show scroll bars when scrolling"
-defaults write NSGlobalDomain AppleShowScrollBars -string 'WhenScrolling'
+defaults write NSGlobalDomain AppleShowScrollBars -string 'Always'
 
 echo "- Disable iOS-style natural scrolling"
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
@@ -105,15 +105,6 @@ defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebK
 
 echo "- Prevent Time Machine from asking to use new drives as backup volumes"
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
-
-echo "- Disable automatic emoji substitution in Messages"
-defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticEmojiSubstitutionEnablediMessage" -bool false
-
-echo "- Make Help Viewer windows non-floating"
-defaults write com.apple.helpviewer DevMode -bool true
-
-echo "- Force Chrome to use system print dialog"
-defaults write com.google.Chrome DisablePrintPreview -bool true
 
 echo "Updating menu bar..."
 
