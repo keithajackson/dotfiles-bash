@@ -33,13 +33,13 @@ if is_installed brew; then
 	install_pkg bash-completion2
 	install_pkg colordiff
 	tap_repo homebrew/dupes
-	install_pkg grep --with-default-names
 	install_pkg coreutils
 	install_pkg git
-	install_pkg node
-	install_pkg ruby
-	tap_repo caskroom/cask
-	install_pkg brew-cask
+
+	install_pkg nvm
+	source /usr/local/opt/nvm/nvm.sh
+	nvm install stable
+	nvm alias default stable
 
 	if is_installed npm; then
 
@@ -51,6 +51,8 @@ if is_installed brew; then
 
 	fi
 
+	install_pkg ruby
+
 	if is_installed gem; then
 
 		echo "Installing Ruby gems..."
@@ -58,6 +60,9 @@ if is_installed brew; then
 		install_gem sass
 
 	fi
+
+	tap_repo caskroom/cask
+	install_pkg brew-cask
 
 else
 

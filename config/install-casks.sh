@@ -11,8 +11,6 @@ if is_installed brew && is_pkg_installed brew-cask; then
 	install_cask google-chrome
 	install_cask sublime-text
 	install_cask flux
-	install_cask mamp
-	install_cask asepsis
 
 	echo "Installing Quick Look plugins..."
 
