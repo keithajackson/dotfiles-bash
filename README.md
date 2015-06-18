@@ -9,6 +9,14 @@ as well as configuration for the applications and packages I use. Note that I am
 an avid OS X user, and therefore most of these customizations are specific to OS
 X. However, some of these customizations can also be applied to Linux systems.
 
+## Setup
+
+```
+git clone -b feature/keith https://github.com/caleb531/dotfiles.git
+cd dotfiles
+./config/config-all.sh
+```
+
 ## Features
 
 ### Bash 4
