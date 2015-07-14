@@ -7,6 +7,9 @@ echo "Setting global OS X preferences..."
 echo "- Disable Gatekeeper"
 sudo spctl --master-disable
 
+echo " - Reduce transparency throughout the system"
+defaults write com.apple.universalaccess reduceTransparency -bool true
+
 echo "- Disable window animations"
 defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
 defaults write com.apple.Mail DisableReplyAnimations -bool true
