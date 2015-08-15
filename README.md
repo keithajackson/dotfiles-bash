@@ -12,7 +12,7 @@ X. However, some of these customizations can also be applied to Linux systems.
 ## Setup
 
 ```
-git clone -b feature/keith https://github.com/caleb531/dotfiles.git
+git clone -b keith https://github.com/caleb531/dotfiles.git
 cd dotfiles
 ./config/config-all.sh
 ```
