@@ -1,105 +1,10 @@
 "*":
-  core:
-    disabledPackages: [
-      "archive-view"
-      "background-tips"
-      "dev-live-reload"
-      "welcome"
-      "update-package-dependencies"
-      "timecop"
-      "exception-reporting"
-      "image-view"
-      "metrics"
-      "open-on-github"
-      "release-notes"
-      "styleguide"
-      "autocomplete"
-      "tree-view"
-      "bookmarks"
-      "autosave"
-      "deprecation-cop"
-      "language-c"
-      "language-objective-c"
-    ]
-    projectHome: "~"
-    themes: [
-      "one-dark-ui"
-      "monokai"
-    ]
-    ignoredNames: [
-      ".sass-cache"
-      ".git"
-      ".hg"
-      ".svn"
-      ".DS_Store"
-      "._*"
-      "Thumbs.db"
-      "*.png"
-      "*.jpg"
-      "*.out"
-      "*.docx"
-      "*.pages"
-    ]
-    followSymlinks: false
-    packagesWithKeymapsDisabled: [
-      "emmet"
-      "atom-alignment"
-      "linter"
-      "resize-indent"
-      "merge-conflicts"
-      "autoflow"
-      "link"
-      "grammar-selector"
-      "encoding-selector"
-      "go-to-line"
-    ]
+  core: {}
   editor:
-    fontFamily: "Monaco"
-    tabLength: 4
-    softTabs: false
-    softWrap: true
-    softWrapAtPreferredLineLength: true
     invisibles: {}
-    autoIndentOnPaste: false
-    fontSize: 16
+  "exception-reporting":
+    userId: "3bb7ed5d-7c63-c5d7-ee9a-d8992962cfb3"
   welcome:
     showOnStartup: false
-  autosave:
-    enabled: true
-  script: {}
   emmet:
     extensionsPath: "~/.emmet"
-    useEmmetComments: false
-  "linter-jscs":
-    onlyConfig: true
-    preset: "jquery"
-  "fuzzy-finder":
-    preserveLastSearch: true
-  "autocomplete-plus":
-    includeCompletionsFromAllBuffers: false
-    maxVisibleSuggestions: 5
-  linter:
-    lintOnFly: false
-    showErrorTabProject: false
-    showErrorTabFile: false
-    showErrorInline: false
-    showErrorTabLine: true
-    statusIconScope: "File"
-  "line-ending-converter":
-    showEolInStatusBar: false
-  "linter-shellcheck": {}
-  "atom-alignment": {}
-  pigments:
-    ignoredScopes: [
-      "\\.comment"
-      "\\.string"
-      "\\.source\\.gfm"
-    ]
-    markerType: "dot"
-  whitespace:
-    ignoreWhitespaceOnCurrentLine: false
-  "find-and-replace": {}
-  "merge-conflicts": {}
-  "markdown-preview":
-    useGitHubStyle: true
-  "svg-preview": {}

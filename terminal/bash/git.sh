@@ -1,0 +1,8 @@
+alias gst='git status'
+alias gr='git remote -v'
+alias gra='git remote add'
+alias grr='git remote remove'
+alias gc='git commit'
+alias ga='git add'
+alias gph='git push'
+alias gd='git diff'

@@ -1,53 +1,32 @@
 /*
  * Your Stylesheet
+ *
+ * This stylesheet is loaded when Atom starts up and is reloaded automatically
+ * when it is changed and saved.
+ *
+ * Add your own CSS or Less to fully customize Atom.
+ * If you are unfamiliar with Less, you can read more about it here:
+ * http://lesscss.org
  */
 
-@import 'ui-variables';
 
-// Ensure that workspace is distinguishable from tab bar and status bar
-// (when no tabs are open)
-atom-workspace {
-  background-color: @base-background-color;
+/*
+ * Examples
+ * (To see them, uncomment and save)
+ */
+
+// style the background color of the tree view
+.tree-view {
+  // background-color: whitesmoke;
 }
 
-atom-text-editor:not([mini]) {
-  &::shadow {
-    // De-italicize all syntax components which Monokai italicizes
-    .storage.type,
-    .entity.other.inherited-class,
-    .variable.parameter,
-    .support.type,
-    .support.class {
-      font-style: normal;
-    }
-    // Make selected line more prominent
-    .line.cursor-line {
-      background-color: rgba(255, 255, 255, 0.05);
-    }
-    // Make the underline under matched brackets solid rather than dotted
-    .bracket-matcher .region {
-      border-bottom-style: solid;
-    }
-  }
+// style the background and foreground colors on the atom-text-editor-element itself
+atom-text-editor {
+  // color: white;
+  // background-color: hsl(180, 24%, 12%);
 }
 
-.status-bar linter-bottom-status.inline-block {
-  // Move Linter Status to the left of Encoding and Language in status bar
-  // Only looks good if Position setting is "left"
-  float: right;
-  // Also reduce margin to converve space
-  margin-right: 0;
-}
-
-linter-bottom-tab {
-  // Hide Linter file tabs to conserve space in status bar
-  display: none;
-  // Decrease font size of file tabs to vertically center them
-  // (in case I ever decide to show them again)
-  font-size: 10px;
-}
-
-// Hide obtrusive overlay icon that displays when Find And Replace wraps around
-.find-wrap-icon {
-  display: none !important;
+// To style other content in the text editor's shadow DOM, use the ::shadow expression
+atom-text-editor::shadow .cursor {
+  // border-color: red;
 }
