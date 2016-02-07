@@ -41,7 +41,7 @@ prompt_err() {
 
 prompt_verbose() {
 	if [ "$PROMPT_VERBOSE_ENABLED" -eq 1 ]; then
-		prompt $VERBOSE_COLOR "> $1 <"
+		prompt $VERBOSE_COLOR "$1"
 	fi
 }
 
