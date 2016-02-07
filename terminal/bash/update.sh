@@ -9,12 +9,18 @@ updatedotfiles() {
 		prompt_verbose "$(git fetch origin)"
 		if [ -n "$(git status | grep behind)" ]; then
 			prompt_verbose 'Updating dotfiles...'
-			prompt_verbose "$(git merge --ff-only)"
+			local update_output="$(git merge --ff-only)"
 			if [ $? != 0 ]; then
 				prompt_err 'Could not update dotfiles as there are merge conflicts.'
+      else
+        if [ -n "$update_output" ]; then
+          prompt_verbose $update_output
+          prompt_notify 'Dotfiles updated'
+        else
+          prompt_notify 'Dotfiles up-to-date.'
+        fi
 			fi
 		fi
-    prompt $CYAN 'Dotfiles up-to-date.'
 	fi
 }
 
