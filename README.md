@@ -1,89 +1,21 @@
-# dotfiles
-*Copyright 2015, Caleb Evans*  
+# Keith Jackson's dotfiles
 *Released under the MIT license*
 
-## Introduction
+The automatically updating, portable bash dotfiles fun! Forked from [Caleb Evans' dotfiles](https://www.github.com/caleb531/dotfiles)]
 
-This repository describes and features the configuration files for my Terminal,
-as well as configuration for the applications and packages I use. Note that I am
-an avid OS X user, and therefore most of these customizations are specific to OS
-X. However, some of these customizations can also be applied on Linux systems.
+### Prerequisites
 
-## Features
+1. Bash 4.2 (`brew install bash && s`)
+2. Bash Autocomplete 2 (`brew install bash-autocomplete2`)
+3. Git (for auto-update) (`brew install git`)
 
-### Bash 4
+### Installation
 
-OS X ships with Bash 3.2, however I use Bash 4 as my shell of choice. Bash 4
-adds Unicode literals, the new *globstar* option, and support for Bash
-Completion 2. These reasons are enough for me to use Bash 4 over the bundled
-v3.2 shell.
+Navigate to the root directory of `dotfiles` and run:
 
-### Completion
+```sh
+bash ./config/create_symlinks.sh
+. ~/.bashrc
+```
 
-I use Bash Completion 2.1 for tab completion on the command line. Bash
-Completion 2 offers significant performance advantages over its predecessor
-(v1.3), making it the optimal choice for my completion needs.
-
-### Terminal theme
-
-For my work in the Terminal, I created Material Colors, a minimalist theme which
-utilizes Google's Material Design color palette. While the theme's
-characteristics are largely founded in my personal tastes, I have chosen to
-include the theme in this repository for your convenience at `terminal/themes/Material Colors.terminal`.
-
-### Color highlighting
-
-My setup enables color highlighting for a number of commands and interfaces,
-including:
-
-* `diff`
-* `grep`, `egrep`, `fgrep`
-* `less`
-* `ls`
-* `tree`
-
-My setup also applies color highlighting when editing Git commit or merge
-messages in Vim.
-
-### Interactive prompt
-
-The `PS1` interactive prompt which I have set for my shell is intended to be
-concise, readable, and useful. The prompt displays the name of the current
-working directory, followed by the name of the current branch (if the directory
-is a git repository). Colons are used as separators, and spacing is utilized to
-improve readability.
-
-#### Examples
-
-* `~ : $`
-* `my-dir : $`
-* `my-repo : master : $`
-
-## Atom configuration
-
-I use [Atom](https://atom.io/) as my editor of choice for editing text files and
-writing code. My Atom configuration, included in this repository, features my
-main configuration, preferred keymaps and snippets, as well as my initialization
-script and custom styles.
-
-### Emmet configuration
-
-I have also included my configuration for [Emmet](http://emmet.io/), an
-invaluable package which enables quick HTML expansion within Atom. This
-configuration consists of both preferences and snippets for HTML/CSS expansion.
-
-Please note that running the below symlink script will symlink `emmet/` to
-`~/.emmet`. Therefore, please ensure that this directory is set as your
-*Extensions Path* within the package's preferences (within Atom's Settings).
-
-## Configuration scripts
-
-For configuring fresh OS X installs, I have also created a series of scripts
-which automatically configure my shell, set my preferred OS X preferences, and
-install packages, among other tasks. All of these scripts are located within the
-`config/` directory. You can run these scripts altogether using `config-all.sh`,
-or individually by executing the respective script.
-
-Generally, it is most useful to execute `config/create-symlinks.sh`, which will
-forcefully create/update the respective symlinks to these dotfiles within your
-home directory.
+From now on, any changes to your shell can be applied immediately with the `reload` command.

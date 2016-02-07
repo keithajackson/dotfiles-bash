@@ -7,9 +7,10 @@ alias ga='git add'
 alias gph='git push'
 alias gd='git diff'
 alias gco='git checkout'
+alias glg='git log'
+alias gpl='git pull'
 
 # git clone && cd
-
 gccd() {
   git clone "$@" | tee $tmp
   repo_name=$(awk -F\' '/Cloning into/ {print $2}' $tmp)

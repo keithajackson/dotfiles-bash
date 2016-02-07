@@ -22,8 +22,8 @@ fi
 
 # Miscellaneous environment variables
 
-# Explicitly declare vim as default text editor
-export EDITOR='atom --wait $@'
+# Explicitly declare atom as default text editor
+export EDITOR='atom'
 
 # Number of lines of command history to keep in memory
 export HISTSIZE=250

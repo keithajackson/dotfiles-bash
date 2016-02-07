@@ -1,6 +1,9 @@
 #!/bin/bash
 # .bashrc
-# Caleb Evans
+
+source ~/.bash/exports.sh
+source ~/.bash/prompt.sh
+
 DOTFILES_DIR="$HOME/dotfiles"
 updatedotfiles() {
 	# if our dotfiles are up to date, check for updates
@@ -25,8 +28,6 @@ updatebrew() {
 updatedotfiles
 updatebrew
 
-source ~/.bash/prompt.sh
-source ~/.bash/exports.sh
 source ~/.bash/aliases.sh
 source ~/.bash/functions.sh
 source ~/.bash/config.sh
