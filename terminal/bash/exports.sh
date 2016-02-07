@@ -20,20 +20,10 @@ if [ -d /usr/local/opt/ruby/bin ]; then
 	export PATH=/usr/local/opt/ruby/bin:$PATH
 fi
 
-# Colorize less
-# Color syntax: http://www.termsys.demon.co.uk/vtansi.htm#colors
-# termcap(5) man page: http://linux.die.net/man/5/termcap
-export LESS_TERMCAP_md=$'\e[1;34m'	# start bold mode
-export LESS_TERMCAP_me=$'\e[1;0m'	# end modes so, us, mb, md, mr
-export LESS_TERMCAP_so=$'\e[1;31m'	# start standout mode
-export LESS_TERMCAP_se=$'\e[1;0m'	# end standout mode
-export LESS_TERMCAP_us=$'\e[1;32m'	# start underlining
-export LESS_TERMCAP_ue=$'\e[1;0m'	# end underlining
-
 # Miscellaneous environment variables
 
 # Explicitly declare vim as default text editor
-export EDITOR='vim'
+export EDITOR='atom --wait $@'
 
 # Number of lines of command history to keep in memory
 export HISTSIZE=250

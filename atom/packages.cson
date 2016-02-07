@@ -1,0 +1,15 @@
+packages: [
+  "activate-power-mode"
+  "advanced-open-file"
+  "atom-wallaby"
+  "auto-update-packages"
+  "emmet"
+  "expand-region"
+  "linter"
+  "linter-csslint"
+  "linter-eslint"
+  "merge-conflicts"
+  "monokai"
+  "package-sync"
+  "svg-preview"
+]

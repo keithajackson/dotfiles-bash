@@ -9,3 +9,4 @@ Host *
     ControlPath ~/.ssh/control:%h:%p:%r
     # Keep connection alive for 1 minute after exit
     ControlPersist 60
+    UseRoaming no

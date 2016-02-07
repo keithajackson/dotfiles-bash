@@ -14,6 +14,7 @@
 [core]
 	# Use tab width of 4 columns for git diff/show
 	pager = less -x1,5
+	editor = atom --new-window --wait
 
 # Push/pull current branch by default (when no arguments are given)
 [push]

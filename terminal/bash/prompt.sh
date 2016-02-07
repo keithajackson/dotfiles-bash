@@ -3,13 +3,13 @@
 # Caleb Evans
 
 # Outputs ANSI escape sequence for the given color code
-__set_color() {
+set_color() {
 	echo -n "\[\e[${1}m\]"
 }
 
 # Resets color escape sequences
 __reset_color() {
-	__set_color 0
+	set_color 0
 }
 
 # Outputs a succinct and useful interactive prompt
@@ -20,22 +20,22 @@ __output_ps1() {
 	local SEPARATOR=' : '
 
 	# Output name of current working directory (with ~ denoting HOME)
-	__set_color $PURPLE_BOLD
+	set_color $PURPLE_BOLD
 	echo -n '\W'
-	__set_color $WHITE_BOLD
+	set_color $WHITE_BOLD
 	echo -n "$SEPARATOR"
 
 	# If working directory is a virtualenv
 	if [ ! -z "$VIRTUAL_ENV" ]; then
 
 		# Output Python version used by virtualenv
-		__set_color $PURPLE_BOLD
+		set_color $PURPLE_BOLD
 		if [ -f "$VIRTUAL_ENV"/bin/python2 ]; then
 			echo -n "python2"
 		elif [ -f "$VIRTUAL_ENV"/bin/python3 ]; then
 			echo -n "python3"
 		fi
-		__set_color $WHITE_BOLD
+		set_color $WHITE_BOLD
 		echo -n "$SEPARATOR"
 
 	fi
@@ -44,15 +44,15 @@ __output_ps1() {
 	if git rev-parse --git-dir &> /dev/null; then
 
 		# Output name of current branch
-		__set_color $PURPLE_BOLD
+		set_color $PURPLE_BOLD
 		echo -n "$(git rev-parse --abbrev-ref HEAD 2> /dev/null)"
-		__set_color $WHITE_BOLD
+		set_color $WHITE_BOLD
 		echo -n "$SEPARATOR"
 
 	fi
 
 	# Output $ for user and # for root
-	__set_color $PURPLE_BOLD
+	set_color $PURPLE_BOLD
 	echo -n '\$ '
 	__reset_color
 

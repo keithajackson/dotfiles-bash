@@ -4,7 +4,9 @@
 
 # Enable aliases to be run as root
 alias sudo='sudo '
-
+mkcd() {
+	mkdir -p "$1" && cd "$1"
+}
 # Colorize directory listings
 alias ls='ls --color=auto'
 alias l='ls -la --color=auto'

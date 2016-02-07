@@ -1,10 +1,20 @@
 "*":
-  core: {}
+  "auto-run":
+    commands: [
+      "auto-update:update-now"
+    ]
+  "auto-update-packages":
+    intervalMinutes: 15
+  core:
+    themes: [
+      "one-dark-ui"
+      "monokai"
+    ]
   editor:
     invisibles: {}
+  emmet:
+    extensionsPath: "~/.emmet"
   "exception-reporting":
     userId: "3bb7ed5d-7c63-c5d7-ee9a-d8992962cfb3"
   welcome:
     showOnStartup: false
-  emmet:
-    extensionsPath: "~/.emmet"

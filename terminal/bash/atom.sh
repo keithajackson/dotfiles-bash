@@ -1,6 +1,3 @@
-
-
-
 # get_local_packages() {
 #   apm ls --installed --bare | grep -oP '(.+)(?=@)'
 # }

@@ -6,3 +6,14 @@ alias gc='git commit'
 alias ga='git add'
 alias gph='git push'
 alias gd='git diff'
+alias gco='git checkout'
+
+# git clone && cd
+
+gccd() {
+  git clone "$@" | tee $tmp
+  repo_name=$(awk -F\' '/Cloning into/ {print $2}' $tmp)
+  rm $tmp
+  printf "changing to directory %s\n" "$repo_name"
+  cd "$repo_name"
+}
