@@ -1,5 +1,3 @@
-DOTFILES_DIR="$HOME/dotfiles"
-
 updatedotfiles() {
   prompt_verbose 'Checking for updates to dotfiles...'
 	# if our dotfiles are up to date, check for updates
