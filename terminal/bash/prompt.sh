@@ -1,41 +1,27 @@
 #!/bin/bash
 # prompt.sh
 # Caleb Evans
-
 # Colors
 # ANSI color reference: http://www.termsys.demon.co.uk/vtansi.htm#colors
 
-# Standard colors
-export BLACK='0;30'
-export RED='0;31'
-export GREEN='0;32'
-export YELLOW='0;33'
-export BLUE='0;34'
-export PURPLE='0;35'
-export CYAN='0;36'
-export WHITE='0;37'
-
-# Bold colors
-export BLACK_BOLD='1;30'
-export RED_BOLD='1;31'
-export GREEN_BOLD='1;32'
-export YELLOW_BOLD='1;33'
-export BLUE_BOLD='1;34'
-export PURPLE_BOLD='1;35'
-export CYAN_BOLD='1;36'
-export WHITE_BOLD='1;37'
-
-# Use green, underlined text for grep matches
-export GREP_COLOR='4;32'
-
 # Outputs ANSI escape sequence for the given color code
-set_color() {
-	echo -n "\[\e[${1}m\]"
+__set_color() {
+	echo -n "\[\033[${1}m\]"
 }
 
 # Resets color escape sequences
-__reset_color() {
-	set_color 0
+__re__set_color() {
+	__set_color 0
+}
+
+__set_color_eval() {
+	echo -ne "\033[${1}m"
+}
+
+prompt() {
+  __set_color_eval $1
+  echo "$2"
+	__set_color_eval 0
 }
 
 # Outputs a succinct and useful interactive prompt
@@ -46,22 +32,22 @@ __output_ps1() {
 	local SEPARATOR=' : '
 
 	# Output name of current working directory (with ~ denoting HOME)
-	set_color $PURPLE_BOLD
+	__set_color $PURPLE_BOLD
 	echo -n '\W'
-	set_color $WHITE_BOLD
+	__set_color $WHITE_BOLD
 	echo -n "$SEPARATOR"
 
 	# If working directory is a virtualenv
 	if [ ! -z "$VIRTUAL_ENV" ]; then
 
 		# Output Python version used by virtualenv
-		set_color $PURPLE_BOLD
+		__set_color $PURPLE_BOLD
 		if [ -f "$VIRTUAL_ENV"/bin/python2 ]; then
 			echo -n "python2"
 		elif [ -f "$VIRTUAL_ENV"/bin/python3 ]; then
 			echo -n "python3"
 		fi
-		set_color $WHITE_BOLD
+		__set_color $WHITE_BOLD
 		echo -n "$SEPARATOR"
 
 	fi
@@ -70,17 +56,17 @@ __output_ps1() {
 	if git rev-parse --git-dir &> /dev/null; then
 
 		# Output name of current branch
-		set_color $PURPLE_BOLD
+		__set_color $PURPLE_BOLD
 		echo -n "$(git rev-parse --abbrev-ref HEAD 2> /dev/null)"
-		set_color $WHITE_BOLD
+		__set_color $WHITE_BOLD
 		echo -n "$SEPARATOR"
 
 	fi
 
 	# Output $ for user and # for root
-	set_color $PURPLE_BOLD
+	__set_color $PURPLE_BOLD
 	echo -n '\$ '
-	__reset_color
+	__re__set_color
 
 }
 
