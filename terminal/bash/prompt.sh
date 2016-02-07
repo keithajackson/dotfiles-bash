@@ -6,9 +6,6 @@
 export NOTIFY_COLOR=$CYAN
 export ERR_COLOR=$RED
 export VERBOSE_COLOR=$GREEN
-export PROMPT_VERBOSE_ENABLED=0
-export PROMPT_NOTIFY_ENABLED=1
-export PROMPT_ERR_ENABLED=1
 # Outputs ANSI escape sequence for the given color code
 __set_color() {
 	echo -n "\[\033[${1}m\]"
@@ -32,19 +29,19 @@ prompt() {
 
 prompt_notify() {
 	if [ "$PROMPT_NOTIFY_ENABLED" -eq 1 ]; then
-		prompt $NOTIFY_COLOR "$1"
+		prompt $NOTIFY_COLOR "> $1 <"
 	fi
 }
 
 prompt_err() {
 	if [ "$PROMPT_ERR_ENABLED" -eq 1 ]; then
-		prompt $NOTIFY_COLOR "$1"
+		prompt $ERR_COLOR "> $1 <"
 	fi
 }
 
 prompt_verbose() {
 	if [ "$PROMPT_VERBOSE_ENABLED" -eq 1 ]; then
-		prompt $VERBOSE_COLOR "$1"
+		prompt $VERBOSE_COLOR "> $1 <"
 	fi
 }
 

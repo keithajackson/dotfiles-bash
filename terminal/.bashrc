@@ -1,6 +1,11 @@
 #!/bin/bash
 # .bashrc
 
+
+export PROMPT_VERBOSE_ENABLED=0
+export PROMPT_NOTIFY_ENABLED=1
+export PROMPT_ERR_ENABLED=1
+
 source ~/.bash/exports.sh
 source ~/.bash/prompt.sh
 source ~/.bash/update.sh

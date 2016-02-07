@@ -4,6 +4,7 @@
 
 # Reloads entire shell, including .bash_profile and any activated virtualenv
 reload() {
+	clear
 	deactivate 2> /dev/null
 	exec $SHELL -l
 }
