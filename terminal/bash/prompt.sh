@@ -1,9 +1,14 @@
 #!/bin/bash
 # prompt.sh
 # Caleb Evans
-# Colors
-# ANSI color reference: http://www.termsys.demon.co.uk/vtansi.htm#colors
 
+# Set aboslute colors for prompt message types
+export NOTIFY_COLOR=$CYAN
+export ERR_COLOR=$RED
+export VERBOSE_COLOR=$GREEN
+export PROMPT_VERBOSE_ENABLED=0
+export PROMPT_NOTIFY_ENABLED=1
+export PROMPT_ERR_ENABLED=1
 # Outputs ANSI escape sequence for the given color code
 __set_color() {
 	echo -n "\[\033[${1}m\]"
@@ -20,8 +25,27 @@ __set_color_eval() {
 
 prompt() {
   __set_color_eval $1
-  echo "$2"
+  echo -n "$2"
 	__set_color_eval 0
+	echo
+}
+
+prompt_notify() {
+	if [ "$PROMPT_NOTIFY_ENABLED" -eq 1 ]; then
+		prompt $NOTIFY_COLOR "$1"
+	fi
+}
+
+prompt_err() {
+	if [ "$PROMPT_ERR_ENABLED" -eq 1 ]; then
+		prompt $NOTIFY_COLOR "$1"
+	fi
+}
+
+prompt_verbose() {
+	if [ "$PROMPT_VERBOSE_ENABLED" -eq 1 ]; then
+		prompt $VERBOSE_COLOR "$1"
+	fi
 }
 
 # Outputs a succinct and useful interactive prompt
