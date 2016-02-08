@@ -17,11 +17,11 @@ __update_dot_files() {
   fi
 
   # Only display get fetch if we're verbose logging
-  prompt_verbose "$(git fetch origin)"
+  prompt_verbose "$(cd $DOTFILES_DIR && git fetch origin)"
 
   # If we aren't behind master, there's nothing to update.
   # Notify and we're done
-  if [ -z "$(git status | grep behind)" ]; then
+  if [ -z "$(cd $DOTFILES_DIR && git status | grep behind)" ]; then
       prompt_verbose 'Dotfiles up-to-date.'
       return
   fi
@@ -29,7 +29,7 @@ __update_dot_files() {
   # Attempt to update, but only if we can do so without hitting
   # merge conflicts.
   prompt_verbose 'Updating dotfiles...'
-  prompt_verbose "$(git merge --ff-only)"
+  prompt_verbose "$(cd $DOTFILES_DIR && git merge --ff-only)"
 
   # If the update fails with a nonzero error code, tell the user
   if [ $? != 0 ]; then
