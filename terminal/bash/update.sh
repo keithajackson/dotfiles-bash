@@ -1,3 +1,12 @@
+__check_network_connection() {
+  wget -q --spider $1
+
+  if [ $? -ne 0 ]; then
+      echo 'fail'
+      return
+  fi
+}
+
 __update_dot_files() {
   prompt_verbose 'Checking for updates to dotfiles...'
 
@@ -47,5 +56,14 @@ __update_brew() {
   prompt_notify 'Brew packages updated.'
 }
 
-__update_dot_files
-__update_brew
+
+update() {
+  if [ -n "$(__check_network_connection https://github.com)" ]; then
+    prompt_err "Could not connect to github.com - are you sure you are online?"
+    return
+  fi
+  __update_dot_files
+  __update_brew
+}
+
+update
