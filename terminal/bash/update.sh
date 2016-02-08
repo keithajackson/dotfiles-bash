@@ -8,7 +8,7 @@ __check_network_connection() {
 }
 
 __update_dot_files() {
-  prompt_verbose 'Checking for updates to dotfiles...'
+  prompt_verbose "Checking for updates to dotfiles in $DOTFILES_DIR..."
 
 	# if we have unsaved changes in our dotfiles, we can't update.
 	if [ -n "$(cd $DOTFILES_DIR && git diff)" ]; then
